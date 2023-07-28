@@ -1,0 +1,23 @@
+<%- include('header', { title: 'Home' }) %>
+
+<h1>Products</h1>
+
+<div class="media-grid">
+    <% products.forEach(function(product) { %>
+    <a class="media-container" href="/order/<%= product.id %>">
+        <div class="media-content">
+            <div class="media-image-container">
+                <img
+                    class="media-image"
+                    src="<%= product.image_url %>"
+                    alt="<%= product.name %>" />
+                <div class="overlay">
+                    <img src="/images/order.png" alt="Order" />
+                </div>
+            </div>
+            <p><strong><%= product.name %></strong></p>
+            <p>Rp.<%= product.price.toLocaleString() %></p>
+        </div>
+    </a>
+    <% }) %>
+</div>

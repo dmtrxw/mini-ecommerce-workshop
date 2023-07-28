@@ -1,0 +1,30 @@
+<%- include('header', { title: 'Order Confirmation' }) %>
+
+<h1>Order Confirmation</h1>
+
+<div class="product-detail">
+    <img src="<%= product.image_url %>" alt="<%= product.name %>" />
+    <div>
+        <p><strong><%= product.name %></strong></p>
+        <p>Rp.<%= product.price.toLocaleString() %></p>
+    </div>
+</div>
+
+<hr />
+
+<form method="post" action="/order/<%= product.id %>">
+    <label for="order_item_qty">Qty</label>
+    <input
+        id="order_item_qty"
+        name="order_item_qty"
+        type="number"
+        step="1"
+        min="1" />
+    <label for="customer_name">Your name</label>
+    <input id="customer_name" name="customer_name" type="text" />
+    <label for="customer_email">Your email</label>
+    <input id="customer_email" name="customer_email" type="text" />
+    <label for="customer_address">Your address</label>
+    <input id="customer_address" name="customer_address" type="text" />
+    <button type="submit">Submit</button>
+</form>

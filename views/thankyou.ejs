@@ -1,0 +1,13 @@
+<%- include('header', { title: 'Thank you' }) %>
+
+<h1>Thank you for ordering 🛍️</h1>
+<p>
+    An email has been sent to you regarding the details needed for making the
+    payment. This page will redirect you back to the home page shortly.
+</p>
+
+<script>
+    setTimeout(() => {
+        window.location.replace('/')
+    }, 5000)
+</script>
